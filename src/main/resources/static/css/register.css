@@ -1,0 +1,42 @@
+body{
+		margin: 0;
+		padding: 0;
+		background-image: url(../img/regist_bg.jpg)
+	}
+	#form{
+		border:1px solid black;
+		width: 550px;
+		height: 550px;
+		margin: auto;
+		margin-top: 50px;
+	}
+	#tab{
+		cellpadding:0px;
+		width: 400px;
+		height: 460px;
+		margin: auto;
+		margin-top: 20px;
+	}
+	tr{
+		padding: 0px;
+		margin: 0px;
+		border:1px solid black;
+		
+	}
+#bottom{
+	margin-top: 40px;
+	text-align:center;
+}
+label.error{
+				background:url(../img/unchecked.gif) no-repeat 10px 3px;
+				padding-left: 30px;
+				font-family:georgia;
+				font-size: 15px;
+				font-style: normal;
+				color: red;
+			}
+			
+			label.success{
+				background:url(../img/checked.gif) no-repeat 10px 3px;
+				padding-left: 30px;
+			}

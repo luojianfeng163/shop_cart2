@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--<html xmlns:th="http://www.w3.org/1999/xhtml" >-->
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>商品详情</title>
+		<link href="../../static/css/bootstrap.css" rel="stylesheet" />
+		<script src="../../static/jquery/bootstrap.min.js"></script>
+		<script src="../../static/jquery/jquery-1.11.3.min.js"></script>
+		<style>
+			/*body{
+	    		margin-left: 400px;
+	    		margin-right: 400px;
+	    	}*/
+			
+			.container {
+				margin-bottom: 50px;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<div class="container">
+			<ol class="breadcrumb" >
+				<li>
+					<a href="#">首页</a>
+				</li>
+				<li>
+					<a href="/shop/bookstore">&gt;&gt;商品</a>
+				</li>
+				<li class="active">&gt;&gt;商品详细信息</li>
+			</ol>
+			<div class="row"  th:each="item : ${book}">
+				<div class="col-md-6" style="border: 1px black solid">
+					<img  style="opacity: 1; width: 300px; height: 250px;" title="" class="medium"  src="../../static/book_img/20285763-1_w.jpg"  th:src="'../../static/'+${item.imgb}">
+
+				</div>
+				<div class="col-md-6" >
+					<div>
+						商品名称：<strong th:text="${item.name}">java开发</strong>
+					</div>
+					<div style="border-bottom: 1px dotted #dddddd; width: 350px; margin: 20px 0 10px 0;">
+						商品价格:<strong  th:text="${item.originprice}" >12</strong>
+					</div>
+					<div>
+						运费：<span style="color:red;">10</span>
+					</div>
+					<div style="margin: 10px 0 10px 0;">
+						促销:
+						<a target="_blank" title="限时抢购 (2014-07-30 ~ 2015-01-01)" style="background-color: #f07373;">限时抢购</a>
+					</div>
+					<div style="margin-top: 30px;">
+						购买数量:
+						<div class="input-group" style="width: 100px;float:right; margin:0 380px 30px 0;">
+							<input type="number" class="form-control" aria-describedby="basic-addon1">
+						</div>
+					</div>
+
+					<button type="button" class="btn btn-warning">加入购物车</button>
+					<button type="button" class="btn btn-danger" style="margin-left: 30px;">立即购买</button>
+
+				</div>
+
+			</div>
+		</div>
+
+	</body>
+
+</html>

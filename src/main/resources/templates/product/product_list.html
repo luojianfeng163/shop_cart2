@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>商品浏览</title>
+    <link href="../../static/css/bootstrap.css" rel="stylesheet"/>
+    <script src="../../static/jquery/bootstrap.min.js"></script>
+    <script src="../../static/jquery/jquery-1.11.3.min.js"></script>
+</head>
+
+<body>
+<div class="container">
+    <ol class="breadcrumb">
+        <li>
+            <a href="#">首页</a>
+        </li>
+        <li>
+            <a href="#">&gt;&gt;商品</a>
+        </li>
+    </ol>
+
+    <!--第一行-->
+    <div class="row" style="">
+
+        <div class="col-md-3" th:each="item:${lists}" style="margin-bottom: 15px;">
+            <a href="" th:href="'/shop/bookinfo?id='+${item.id}">
+                <!--src="../../static/book_img/20417467-1_b.jpg"-->
+                <img class="img-rounded"
+                     style="width: 180px;height: 230px;" th:src="'../../static/'+${item.imgb}">
+            </a>
+            <div style="text-align: center;font-size: 17px;">
+                <span>价格：￥</span><span style="color:red;size: a4;" th:text="${item.originprice}"></span>
+
+            </div>
+            <div style="text-align: center;font-size: 22px; width: 200px;height: 87px;">
+                <a href="#" th:href="'/shop/bookinfo?id='+${item.id}">
+                    <span th:text="${item.name}" style="font-size: small;"></span>
+                </a>
+            </div>
+
+
+
+
+      </div>
+   </div>
+
+
+<div class="row" style="text-align: center;">
+    <nav aria-label="Page navigation">
+        <ul class="pagination">
+            <li>
+                <a aria-label="Previous" href="#">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">1</a>
+            </li>
+            <li>
+                <a href="#">2</a>
+            </li>
+            <li>
+                <a href="#">3</a>
+            </li>
+            <li>
+                <a href="#">4</a>
+            </li>
+            <li>
+                <a href="#">5</a>
+            </li>
+            <li>
+                <a aria-label="Next" href="#">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+</div>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>注册页面</title>
+		<link  href="../../static/css/register.css" type="text/css" rel="stylesheet"/>
+		<script src="../../static/jquery/jquery-1.8.3.js"/>
+		<script src="../../static/jquery/jquery.validate.min.js"/>
+		<script src="../../static/jquery/messages_zh.js"/>
+
+		<script>
+			$(document).ready(function() {
+				$("#checkForm").validate({
+					rules: {
+
+						user: {
+							required: true,
+							minlength: 3,
+							maxlength: 8
+						},
+						password: {
+							required: true,
+							digits: true,
+							minlength: 6
+						},
+						Rpassword: {
+							required: true,
+							equalTo: "[name='password']"
+						},
+						email: {
+							required: true,
+							email: true
+						},
+						name: {
+							required: true,
+							maxlength: 5
+						},
+						gender: {
+							required: true
+						}
+					},
+					messages: {
+						user: {
+							required: "用户名不能为空!",
+							minlength: "用户名不得少于3位!"
+						},
+						password: {
+							required: "密码不能为空!",
+							digits: "密码必须是整数!",
+							minlength: "密码不得少于6位!"
+						},
+						Rpassword: {
+							required: "确认密码不能为空!",
+							equalTo: "两次输入密码不一致!"
+						},
+						email: {
+							required: "邮箱不能为空!",
+							email: "邮箱格式不正确!"
+						},
+						name: {
+							required: "姓名不能为空!",
+							maxlength: "姓名不得多于5位!"
+						},
+						genger: {
+							required: "性别必须勾选!"
+						}
+					},
+					errorElement: "label", //用来创建错误提示信息标签,validate插件默认的就是label
+					success: function(label) { //验证成功后的执行的回调函数
+						//label指向上面那个错误提示信息标签label
+						label.text(" ") //清空错误提示消息
+							.addClass("success"); //加上自定义的success类
+					}
+
+				})
+			})
+		</script>
+
+	</head>
+
+	<body>
+		<div id="form">
+			<form action="/user/userRegister" id="checkForm" method="post">
+				<table id="tab">
+					<tr>
+						<td colspan="2">
+							<font size="+1">会员注册</font>&nbsp;&nbsp;&nbsp;&nbsp;USER REGISTER</td>
+					</tr>
+					<tr>
+						<td>会员名:</td>
+						<td><input type="text" name="user" id="username" placeholder="请输入用户名" /></td>
+					</tr>
+					<tr>
+						<td>密&nbsp&nbsp;码:</td>
+						<td><input type="password" name="password" id="password" placeholder="请输入密码" /></td>
+					</tr>
+					<tr>
+						<td>确认密码：</td>
+						<td><input type="password" name="Rpassword" id="Rpassword" placeholder="请再次输入密码" /></td>
+					</tr>
+					<tr>
+						<td>Emaile:</td>
+						<td><input type="email" id="email" name="email" placeholder="请输入邮箱" /></td>
+					</tr>
+					<tr>
+						<td>姓&nbsp;&nbsp;名:</td>
+						<td><input type="text" name="name" id="name" placeholder="请输入姓名" /></td>
+					</tr>
+					<tr>
+						<td>性&nbsp;&nbsp;别：</td>
+						<td><input type="radio" name="gender" value="男" /> 男
+							<input type="radio" name="gender" value="女" /> 女 </td>
+					</tr>
+					<tr>
+						<td>出生日期:</td>
+						<td><input type="date" name="birthday" id="birthday" placeholder="出生日期" /></td>
+					</tr>
+					<tr>
+						<td>验证码:</td>
+						<td><input type="text" name="code" id="code" placeholder="请输入验证码" />
+							<img src="../../static/img/yanzhengma.png" /></td>
+					</tr>
+					<tr>
+						<td colspan="2" align="center"><input type="reset" value="重置" />
+							<input type="submit" value="提交" /></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		<div id="bottom">
+			<p>Copyright @2018-2019 版权归我所有</p>
+		</div>
+	</body>
+
+</html>

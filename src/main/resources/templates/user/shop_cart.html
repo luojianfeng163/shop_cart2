@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../../static/css/bootstrap.css" rel="stylesheet" />
+		<script src="../../static/jquery/bootstrap.min.js"></script>
+		<script src="../../static/jquery/jquery-1.11.3.min.js"></script>
+		<title>我的购物车</title>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="page-header" style="margin: 0 200px 0 200px;">
+				<h1 style="color: crimson;margin-left: 0px;">购物车 <small>shopping cart</small></h1>
+			</div>
+			<form method="get" action="#">
+				<table class="table table-hover">
+					<tr>
+						<th></th>
+						<th>商品</th>
+						<th>商品名称</th>
+						<th>单价</th>
+						<th>数量</th>
+						<th>金额</th>
+						<th>操作</th>
+					</tr>
+					<!--商品描述-->
+					<tr>
+						<td>
+							<input type="checkbox" id="selectItem" />
+						</td>
+						<!--商品图片-->
+						<td>
+							<div class="row">
+								<div class="col-xs-6 col-md-3">
+									<a href="#" class="thumbnail">
+										<img src="../../static/book_img/20285763-1_b.jpg"/>
+									</a>
+								</div>
+							</div>
+						</td>
+						<!--商品名称-->
+						<td>
+							<strong>Java从入门到放弃</strong>
+						</td>
+						<!--商品单价-->
+						<td>￥56.9</td>
+						<!--商品数量-->
+						<td><input type="number" placeholder="1" id="num" /></td>
+						<!--商品总价-->
+						<td>￥<span id="totalPrice">56.9</span></td>
+						<!--对商品操作操作-->
+						<td>
+							<a href="#">删除</a>
+						</td>
+					</tr>
+   
+				</table>
+				<!--结算栏-->
+				<nav class="navbar navbar-default ">
+					<div class="container" style="margin-top: 10px;">
+						<!--全选所有商品-->
+						<div class="col-md-4">
+							<input type="checkbox" id="checkAll" />全选
+						</div>
+						<!--购物车总金额，下单button-->
+						<div class="col-md-2 col-md-offset-6">
+							<div class="row">
+								<div class="col-md-6">
+									合计:56.9
+								</div>
+								<div class="col-md-6">
+									<button type="submit" class="btn btn-danger">结算</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</nav>
+			</form>
+			</div>
+	</body>
+
+</html>
